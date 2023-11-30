@@ -3,11 +3,11 @@ package guru.qa;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class AvitoSearchTest {
+public class AvitoSearchTests {
     @BeforeEach
     void setUp(){
         Configuration.pageLoadStrategy = "eager";
@@ -16,7 +16,9 @@ public class AvitoSearchTest {
         open("https://www.avito.ru/");
 
     }
-    @CsvFileSource(resources = "/test_data/avitoSearch.csv")
+    @ValueSource(strings = {
+         "play station 4", "play station 5"
+    })
     @Test
     @Tag("Search")
     @ParameterizedTest(name = "Поиск {0} даёт результаты")
