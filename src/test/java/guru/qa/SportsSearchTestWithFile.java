@@ -13,7 +13,7 @@ public class SportsSearchTestWithFile {
     void setUp() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
         open("https://www.sports.ru/");
 
     }
