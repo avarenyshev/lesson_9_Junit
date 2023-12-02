@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SportsSearchShinnikTest {
+public class SportsSearchTestWithFile {
     @BeforeEach
     void setUp() {
         Configuration.pageLoadStrategy = "eager";

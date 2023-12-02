@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class SportsSearchTestAtletico {
+public class SportsSearchTestAtleticoWithCsvSource {
     @BeforeEach
     void setUp() {
         Configuration.pageLoadStrategy = "eager";
@@ -20,7 +20,9 @@ public class SportsSearchTestAtletico {
 
     }
 
-    @CsvSource(value = {"Atletico Madrid", "https://www.sports.ru/atletico/"})
+    @CsvSource(value =
+            {"Atletico Madrid, https://www.sports.ru/atletico/",
+            "Спартак, https://www.sports.ru/spartak/ "})
     @ParameterizedTest(name = "При поиске по команде {0} в результатах находим ссылку на главную страницу {1}")
     @Tag("SearchSports.ru")
     void succcessfulSearchAtletico(String searchQuery, String expectedLink) {

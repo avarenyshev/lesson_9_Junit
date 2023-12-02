@@ -19,7 +19,6 @@ public class AvitoSearchTests {
     @ValueSource(strings = {
          "play station 4", "play station 5"
     })
-    @Test
     @Tag("Search")
     @ParameterizedTest(name = "Поиск {0} даёт результаты")
     void succcessfulSearchTest(String searchQueary) {
